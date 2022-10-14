@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# tRPC with Next.js, TypeScript & Prisma
 
-## Getting Started
+## docker compose up -d
 
-First, run the development server:
+## Why you should be learning & using tRPC
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Making E2E type-safe APIs is fun and easy
+- Gives you a deeper understanding of Next.js
+- Going to be very popular (prediction)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img src="./diagram.png" width="500px"/>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Technologies used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- tRPC
+- TypeScript
+- Prisma (Postgres)
+- Zod - Schema validation & type generation
+- nodemailer - Sending OTP emails
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features
 
-## Learn More
+- Register user
+- Login with OTP
+- Create a post
+- View a post
+- List posts
 
-To learn more about Next.js, take a look at the following resources:
+## What will you learn?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Enough tRPC to be productive
+- Using Next.js as a monorepo
+- Some TypeScript
+- OPT login flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## What you will need
 
-## Deploy on Vercel
+- A running instance of a DB (Postgres, Mongo, SQLlite, MYSQL) - Postgres
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Video structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Demo
+2. Code walk-through
+
+3. Bootstrap application
+   - Create app router
+   - Create router base
+   - Configure \_app.tsx
+   - Make a request
+   - Configure prisma
+4. Register user
+   - Create a user model
+   - Create register user schema
+   - Configure user router
+   - Register user resolver
+   - Register UI
+5. User login
+   - Add login token to prisma
+   - Login schema
+   - Configure mailer
+   - Verify login schema
+   - Login resolver
+   - Verify login resolver
+   - Login UI
+6. Create post
+   - Add post to prisma
+   - Create post router
+   - Create post resolver
+   - Create post UI
+7. List posts
+   - List posts resolver
+   - List posts UI
+8. View single post
+   - Query post schema
+   - Query post resolver
+   - Post UI
