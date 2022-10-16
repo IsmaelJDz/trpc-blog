@@ -19,9 +19,9 @@ function VerifyToken({ hash }: { hash: string }) {
     return <p>Verifying...</p>;
   }
 
-  // router.push(
-  //   data?.redirect.includes('login') ? '/' : data?.redirect || '/'
-  // );
+  router.push(
+    data?.redirect.includes('login') ? '/' : data?.redirect || '/'
+  );
 
   return <p>Redirecting...</p>;
 }
@@ -41,10 +41,10 @@ function LoginForm() {
     mutate({ ...values, redirect: router.asPath });
   };
 
-  const hash = router.asPath.split('#token')[1];
+  const hash = router.asPath.split('#token=')[1];
 
   if (hash) {
-    return <VerifyToken hash='' />;
+    return <VerifyToken hash={hash} />;
   }
 
   return (

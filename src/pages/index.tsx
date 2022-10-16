@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     return <LoginForm />;
   }
 
-  return <Link href='/dashboard'>Create postM</Link>;
+  return <Link href='/posts/new'>Create postM</Link>;
 };
 
 export default Home;

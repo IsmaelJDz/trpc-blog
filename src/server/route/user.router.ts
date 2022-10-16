@@ -78,7 +78,7 @@ export const userRouter = createRoute()
         },
       });
 
-      await sendLoginEmail({
+      sendLoginEmail({
         token: encode(`${token.id}:${user.email}`),
         url: baseUrl,
         email: user.email,
@@ -93,7 +93,8 @@ export const userRouter = createRoute()
     input: verifyOptSchema,
     async resolve({ input, ctx }) {
       const decoded = decode(input.hash).split(':');
-      const [email, id] = decoded;
+
+      const [id, email] = decoded;
 
       const token = await ctx.prisma.loginToken.findFirst({
         where: {
